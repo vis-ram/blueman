@@ -150,21 +150,6 @@
     </key>
   </schema>
   <schema id="org.blueman.transfer" path="/org/blueman/transfer/">
-    <key type="b" name="opp-enabled">
-      <default>false</default>
-      <summary>OPP Enabled</summary>
-      <description></description>
-    </key>
-    <key type="b" name="ftp-enabled">
-      <default>false</default>
-      <summary>FTP Enabled</summary>
-      <description></description>
-    </key>
-    <key type="b" name="ftp-allow-write">
-      <default>false</default>
-      <summary>FTP Allow Writing</summary>
-      <description></description>
-    </key>
     <key type="b" name="opp-accept">
       <default>false</default>
       <summary>OPP Accept Connections</summary>

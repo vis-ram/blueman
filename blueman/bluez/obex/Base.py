@@ -56,5 +56,5 @@ class Base(GObject):
         return self.__interface
 
     @property
-    def _object_path(self):
+    def object_path(self):
         return self.__obj_path
