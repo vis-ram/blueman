@@ -1,3 +1,8 @@
+from __future__ import print_function
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import unicode_literals
+
 import dbus
 import dbus.service
 from gi.repository import GObject
@@ -10,14 +15,14 @@ from blueman.bluez.obex.Error import Error
 class _GDbusObjectType(dbus.service.InterfaceType, GObjectMeta):
     pass
 
-_GDBusObject = _GDbusObjectType('_GDBusObject', (dbus.service.Object, GObject.GObject), {})
+_GDBusObject = _GDbusObjectType(str('_GDBusObject'), (dbus.service.Object, GObject.GObject), {})
 
 # noinspection PyPep8Naming
 class Agent(_GDBusObject):
     __gsignals__ = {
-        'release': (GObject.SignalFlags.NO_HOOKS, None, ()),
-        'authorize': (GObject.SignalFlags.NO_HOOKS, None, (GObject.TYPE_PYOBJECT,)),
-        'cancel': (GObject.SignalFlags.NO_HOOKS, None, ()),
+        str('release'): (GObject.SignalFlags.NO_HOOKS, None, ()),
+        str('authorize'): (GObject.SignalFlags.NO_HOOKS, None, (GObject.TYPE_PYOBJECT,)),
+        str('cancel'): (GObject.SignalFlags.NO_HOOKS, None, ()),
     }
 
     def __init__(self, agent_path):
