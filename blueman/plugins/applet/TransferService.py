@@ -3,7 +3,6 @@ from __future__ import division
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from gettext import ngettext
 from gi.repository import GObject
 import os
 import shutil
