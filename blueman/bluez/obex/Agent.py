@@ -7,7 +7,7 @@ import dbus
 import dbus.service
 from gi.repository import GObject
 from gi.types import GObjectMeta
-from types import ClassType
+from inspect import isclass
 from blueman.Functions import dprint
 from blueman.bluez.obex.Error import Error
 
@@ -60,7 +60,7 @@ class Agent(_GDBusObject):
 
     def reply(self, reply):
         dprint(self._agent_path, reply)
-        if isinstance(reply, ClassType) and issubclass(reply, Error):
+        if isclass(reply) and issubclass(reply, Error):
             self._error_handler(dbus.DBusException(name=('org.bluez.obex.Error.%s' % reply.__name__)))
         else:
             self._reply_handler(reply)
